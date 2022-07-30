@@ -1,17 +1,26 @@
-//Calculating Prime Factors
-function PrimeFactors(number) {
-    let array = new Array();
-    for (let i = 2; i <= number / 2; i++) {
-      if (number % i == 0) {
-        let count = 0;
-        for (let j = 2; j <= Math.sqrt(i); j++) {
-          if (i % j == 0) count++;
+arr = [0, -1, 2, -3, 1];
+
+// Prints all triplets in arr[] with 0 sum    
+function findTriplets(arr) {
+    let found = false;
+    for (let i = 0; i < arr.length - 2; i++) {
+        for (let j = i + 1; j < arr.length - 1; j++) {
+            for (let k = j + 1; k < arr.length; k++) {
+                if (arr[i] + arr[j] + arr[k] === 0) {
+                    console.log("Three Numbers Whose Sum equal to Zero");
+                    console.log(arr[i]);
+                    console.log(arr[j]);
+                    console.log(arr[k]);
+                    console.log(".....................");
+                    found = true;
+
+                }
+            }
         }
-        if (count == 0 && i > 1) array.push(i);
-      }
+        // If no triplet with 0 sum found in array
+        if (found === false) {
+            document.write(" not exist ");
+        }
     }
-    return array;
-  }
-  let number = Math.floor(Math.random() * 1000);
-  console.log("Prime Factors of " + number + " are : ");
-  console.log(PrimeFactors(number));
+}
+findTriplets(arr);
