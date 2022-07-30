@@ -48,3 +48,8 @@ function FindLargestAndSmallest(arrayOfElements) {
 };
 //calling the function
 FindLargestAndSmallest(array);
+
+console.log("\nUsing Array Sort Method");
+array.sort();
+console.log("Second Largest Number is : "+array[8]);
+console.log("Second smallest Number is : "+array[0]);
